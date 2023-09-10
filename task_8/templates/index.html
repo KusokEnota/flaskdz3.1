@@ -1,0 +1,23 @@
+{%  extends 'base.html' %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+     <title>Главная страница</title>
+    {% endblock %}
+
+  <title>Urok 1</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='static/style/style.css') }}" />
+  <meta charset="UTF-8">
+
+</head>
+<body>
+{% block content %}
+{% endblock %}
+</body>
+</html>
