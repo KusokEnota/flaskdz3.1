@@ -1,0 +1,47 @@
+{%  extends 'base.html' %}
+
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+{% block content %}
+   <!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+</head>
+<body>
+    <h1>Регистрация</h1>
+    <form method="POST" action="{{ url_for('register') }}">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.first_name.label }}
+            {{ form.first_name(size=20) }}
+        </div>
+        <div>
+            {{ form.last_name.label }}
+            {{ form.last_name(size=20) }}
+        </div>
+        <div>
+            {{ form.email.label }}
+            {{ form.email(size=30) }}
+        </div>
+        <div>
+            {{ form.password.label }}
+            {{ form.password(size=20) }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+</body>
+</html>
+
+{% endblock %}
